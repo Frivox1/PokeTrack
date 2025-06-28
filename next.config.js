@@ -4,7 +4,9 @@ const nextConfig = {
     domains: ['images.pokemontcg.io'],
   },
   experimental: {
-    serverActions: true,
+    serverActions: {
+      enabled: true
+    },
   },
   headers: async () => {
     return [
