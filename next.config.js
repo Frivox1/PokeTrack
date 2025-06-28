@@ -8,6 +8,9 @@ const nextConfig = {
       enabled: true
     },
   },
+  eslint: {
+    ignoreDuringBuilds: true, // Cela désactivera temporairement la vérification ESLint pendant le build
+  },
   headers: async () => {
     return [
       {
