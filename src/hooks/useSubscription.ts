@@ -15,6 +15,12 @@ interface Subscription {
   updated_at: string;
 }
 
+type RealtimeSubscriptionPayload = RealtimePostgresChangesPayload<{
+  [key: string]: any;
+  id: string;
+  user_id: string;
+}>;
+
 export function useSubscription() {
   const [subscription, setSubscription] = useState<Subscription | null>(null);
   const [loading, setLoading] = useState(true);
@@ -65,14 +71,10 @@ export function useSubscription() {
           schema: 'public',
           table: 'user_subscriptions',
         },
-        async (payload: RealtimePostgresChangesPayload<{
-          id: string;
-          user_id: string;
-          [key: string]: any;
-        }>) => {
+        async (payload: RealtimeSubscriptionPayload) => {
           console.log('Subscription changed:', payload);
           const { data: { user } } = await supabase.auth.getUser();
-          if (user && payload.new?.user_id === user.id) {
+          if (user && payload.new && 'user_id' in payload.new && payload.new.user_id === user.id) {
             console.log('Updating subscription for current user');
             await fetchSubscription();
           }
