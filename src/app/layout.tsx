@@ -8,7 +8,7 @@ import { AuthProvider } from "@/context/AuthContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pokédex - Toutes les générations",
+  title: "PokeTrack",
   description: "Un Pokédex moderne affichant tous les Pokémon de toutes les générations",
 };
 

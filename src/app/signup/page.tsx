@@ -32,11 +32,7 @@ export default function SignUpPage() {
         },
       });
       if (error) throw error;
-      setInfo("A confirmation email has been sent. Please check your inbox.");
-      setEmail("");
-      setPassword("");
-      setUsername("");
-      setTimeout(() => router.push("/"), 3000);
+      router.push("/");
     } catch (err: any) {
       setError(err?.message || "An error occurred");
     } finally {

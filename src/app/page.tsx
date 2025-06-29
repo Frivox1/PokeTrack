@@ -11,6 +11,8 @@ const cleanPokemonName = (name: string): string => {
   return name
     .replace(/^(M\s+|Mega\s+)/i, '')
     .replace(/\s*(V|EX|GX|VMAX|VSTAR)\s*$/i, '')
+    .replace(/^Team Rocket's\s+/i, '') // Ajoute le filtre pour "Team Rocket's"
+    .replace(/\s*(Teal Mask|Hearthflame Mask|Wellspring Mask|Cornerstone Mask)\s*/gi, '') // Filtre pour les masques d'Ogerpon
     .replace(/-+$/, '')
     .trim()
     .toLowerCase();
@@ -63,7 +65,7 @@ export default function Home() {
         break;
       case 9:
         start = 906;
-        end = 1008;
+        end = 1025;
         break;
     }
 

@@ -1056,13 +1056,13 @@ export const GENERATION_9: Pokemon[] = [
   { id: 1016, name: "Fezandipiti", types: ["Poison", "Fairy"] },
   { id: 1017, name: "Ogerpon", types: ["Grass"] },
   { id: 1018, name: "Archaludon", types: ["Steel", "Dragon"] },
-  { id: 1019, name: "Raging Bolt", types: ["Electric", "Dragon"] },
-  { id: 1020, name: "Iron Crown", types: ["Steel", "Psychic"] },
-  { id: 1021, name: "Terapagos", types: ["Normal"] },
-  { id: 1022, name: "Pecharunt", types: ["Poison", "Ghost"] },
-  { id: 1023, name: "Gouging Fire", types: ["Fire", "Dragon"] },
-  { id: 1024, name: "Raging Bolt", types: ["Electric", "Dragon"] },
-  { id: 1025, name: "Iron Boulder", types: ["Rock", "Psychic"] }
+  { id: 1019, name: "Hydrapple", types: ["Dragon", "Grass"] },
+  { id: 1020, name: "Gouging Fire", types: ["Fire", "Dragon"] },
+  { id: 1021, name: "Raging Bolt", types: ["Electric", "Dragon"] },
+  { id: 1022, name: "Iron Boulder", types: ["Rock", "Psychic"] },
+  { id: 1023, name: "Iron Crown", types: ["Steel", "Psychic"] },
+  { id: 1024, name: "Terapagos", types: ["Normal"] },
+  { id: 1025, name: "Pecharunt", types: ["Poison", "Ghost"] }
 ];
 
 // Combine all generations
