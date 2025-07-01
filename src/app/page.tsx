@@ -5,18 +5,7 @@ import PokemonCard from '@/components/PokemonCard';
 import GenerationSelector from '@/components/GenerationSelector';
 import { POKEMONS } from '@/data/pokemon';
 import { useCardCollection } from '@/hooks/useCardCollection';
-
-// Fonction pour nettoyer le nom du Pokémon (copiée depuis useCardCollection)
-const cleanPokemonName = (name: string): string => {
-  return name
-    .replace(/^(M\s+|Mega\s+)/i, '')
-    .replace(/\s*(V|EX|GX|VMAX|VSTAR)\s*$/i, '')
-    .replace(/^Team Rocket's\s+/i, '') // Ajoute le filtre pour "Team Rocket's"
-    .replace(/\s*(Teal Mask|Hearthflame Mask|Wellspring Mask|Cornerstone Mask)\s*/gi, '') // Filtre pour les masques d'Ogerpon
-    .replace(/-+$/, '')
-    .trim()
-    .toLowerCase();
-};
+import { cleanPokemonName } from '@/utils/cleanPokemonName';
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');

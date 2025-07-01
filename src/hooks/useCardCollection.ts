@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { cleanPokemonName } from '@/utils/cleanPokemonName';
 
 interface CollectionItem {
   id: string;
@@ -10,16 +11,6 @@ interface CollectionItem {
   pokemon_name: string;
   created_at: string;
 }
-
-// Fonction pour nettoyer le nom du Pokémon
-const cleanPokemonName = (name: string): string => {
-  // Enlève le préfixe "M" ou "Mega", les suffixes comme "V", "EX", "GX", etc., et les tirets à la fin
-  return name
-    .replace(/^(M\s+|Mega\s+)/i, '') // Supprime "M " ou "Mega " au début
-    .replace(/\s*(V|EX|GX|VMAX|VSTAR)\s*$/i, '') // Supprime les suffixes
-    .replace(/-+$/, '') // Supprime les tirets à la fin
-    .trim();
-};
 
 export function useCardCollection() {
   const { user } = useAuth();
